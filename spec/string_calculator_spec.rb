@@ -49,4 +49,14 @@ describe StringCalculator do
         #assert
         expect(result).to eq 6
     end
+    it "cuando operacion es '1\n+3' retorna 4" do
+        #Arrange
+        calculator = StringCalculator.new
+        
+        #act
+        result = calculator.calcular("1\n+3")
+        
+        #assert
+        expect(result).to eq 4
+    end
 end
