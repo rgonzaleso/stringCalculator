@@ -5,19 +5,28 @@ class StringCalculator
             0
         else
 
+            total = operacion.to_i 
             arreglo = operacion.split "+"
-            suma = 0
-            
-            arreglo.each do |elemento|
-                suma = suma + elemento.to_i
+         
+            if arreglo.length() > 1
+                i = 1
+                while (i<arreglo.size)
+                    total = total+arreglo[i].to_i
+                    i=i+1
+                end
+            end
+  
+
+            arreglo = operacion.split "-"
+            if arreglo.length() > 1
+                i = 1
+                while (i<arreglo.size)
+                    total = total-arreglo[i].to_i
+                    i=i+1
+                end
             end
 
-            suma
-            #if(operacion.include? "+")
-            #    operacion.to_i + 2
-            #else
-            #    operacion.to_i
-            #end            
+            total           
         end
     end
 
