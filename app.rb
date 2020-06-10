@@ -6,6 +6,12 @@ get '/' do
 end
 
 post '/' do
-    @mensaje = 'Salvaste tu vida'
+    if params ['palabra'] == 'Hola'
+     @mensaje = 'Salvaste tu vida'
     erb :resultado
+    else 
+        @mensaje = 'Perdiste tu vida'
+         erb :resultado
+    end
 end
+
