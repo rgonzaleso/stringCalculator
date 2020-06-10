@@ -2,9 +2,10 @@ require 'sinatra'
 require './config'
 
 get '/' do
-    erb  :hola
+    erb  :juegoAhorcado
 end
 
 post '/' do
-    'Salvaste tu vida'
+    @mensaje = 'Salvaste tu vida'
+    erb :resultado
 end
