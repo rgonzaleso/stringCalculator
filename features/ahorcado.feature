@@ -5,7 +5,17 @@ Scenario: Adivina la palabra Hola
     When Ingreso "Hola" como palabra a adivinar
     Then Debe decirme "Salvaste tu vida"
 
-Scenario: Adivina la palabra Chau
+Scenario: Arriesgo 6 veces y pierdo
     Given Inicio el juego con palabra secreta iniciada
     When Ingreso "Chau" como palabra a adivinar
-    Then Debe decirme "Perdiste tu vida"
+    And Ingreso "Chau2" como palabra a adivinar
+    And Ingreso "Chau3" como palabra a adivinar
+    And Ingreso "Chau3" como palabra a adivinar
+    And Ingreso "Chau3" como palabra a adivinar
+    And Ingreso "Chau3" como palabra a adivinar
+    Then Debe decirme "Perdiste una vida, te quedan 0"
+
+Scenario: Mostrar cantidad de vidas
+    Given Inicio el juego con palabra secreta iniciada
+    When Ingreso "Chau" como palabra a adivinar
+    Then Debe decirme "Perdiste una vida, te quedan 5"

@@ -1,0 +1,47 @@
+require './lib/ahorcado'
+
+describe Ahorcado do
+#PRUEBA 1 HOLA
+    it "Adivina la palabra Hola" do
+        #arrange
+        ahorcado = Ahorcado.new
+        #act
+        result = ahorcado.validar "Hola"
+        #result = ahorcado.status
+        #assert
+        expect(result).to eq "Salvaste tu vida"
+    end
+
+
+
+#PRUEBA 2 CHAU
+    it "Arriesgo 3 veces y pierdo" do
+        #arrange
+        ahorcado = Ahorcado.new
+       
+        #act
+        ahorcado.validar "Chau"
+        ahorcado.validar "Chau2"
+        ahorcado.validar "Chau2"
+        ahorcado.validar "Chau2"
+        ahorcado.validar "Chau2"
+        result = ahorcado.validar "Chau3"
+
+        #assert
+        expect(result).to eq "Perdiste una vida, te quedan 0"
+    end
+
+#PRUEBA 3 CHAU
+    it "Arriesgo una vez" do
+        #arrange
+        ahorcado = Ahorcado.new
+       
+        #act
+        result = ahorcado.validar "Chau"
+
+        #assert
+        expect(result).to eq "Perdiste una vida, te quedan 5"
+    end
+
+
+end

@@ -8,9 +8,14 @@ end
 
 post '/' do
 
-    ahorcado = Ahorcado.new
+    ahorcado = session['ahorcado'] 
+    if( ahorcado == nil)
+        ahorcado = Ahorcado.new
+        session['ahorcado'] = ahorcado
+    end
+
     @mensaje = ahorcado.validar params['palabra']
-    erb :resultado
+    erb :juegoAhorcado
  
 end
 
