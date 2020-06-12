@@ -1,17 +1,16 @@
 require 'sinatra'
 require './config'
+require './lib/ahorcado'
 
 get '/' do
     erb  :juegoAhorcado
 end
 
 post '/' do
-    if params ['palabra'] == 'Hola'
-     @mensaje = 'Salvaste tu vida'
+
+    ahorcado = Ahorcado.new
+    @mensaje = ahorcado.validar params['palabra']
     erb :resultado
-    else 
-        @mensaje = 'Perdiste tu vida'
-         erb :resultado
-    end
+ 
 end
 
