@@ -3,7 +3,7 @@ require './config'
 require './lib/ahorcado'
 
 get '/' do
-    erb  :jugador1
+    erb :jugador1
 end
 
 post '/' do
@@ -16,12 +16,14 @@ post '/' do
 end
 
 get '/jugador2' do
-    erb  :jugador2
+    @tip = ahorcado.tip
+    erb :jugador2
 end
 
 post '/jugador2' do
 
     ahorcado = session['ahorcado'] 
+    
     @mensaje = ahorcado.validar params['palabra']
     erb :jugador2
  

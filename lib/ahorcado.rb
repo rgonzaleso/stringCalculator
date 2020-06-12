@@ -16,4 +16,8 @@ class Ahorcado
         end
     end
 
+    def tip
+        "La palabra a adivinar tiene "+ @palabraSecreta.length.to_s + " letras"
+    end
+
 end

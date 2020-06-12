@@ -43,4 +43,16 @@ describe Ahorcado do
         expect(result).to eq "Perdiste una vida, te quedan 5"
     end
 
+    it "Puedo obtener la cantidad de letras de la palabra como tip" do
+        #arrange
+        ahorcado = Ahorcado.new "Ahorcado"
+       
+        #act
+        result = ahorcado.tip
+
+        #assert
+        expect(result).to eq "La palabra a adivinar tiene 8 letras"
+    end
+
+
 end
