@@ -15,4 +15,8 @@ class Ahorcado
         end
     end
 
+    def tip
+        "La palabra a adivinar tiene 4 letras"
+    end
+
 end

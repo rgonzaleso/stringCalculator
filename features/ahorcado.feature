@@ -19,3 +19,7 @@ Scenario: Mostrar cantidad de vidas
     Given Inicio el juego con palabra secreta iniciada
     When Ingreso "Chau" como palabra a adivinar
     Then Debe decirme "Perdiste una vida, te quedan 5"
+
+Scenario: Mostrar tip sobre la palabra a elegir
+    Given Inicio el juego con palabra secreta iniciada
+    Then Debe decirme "La palabra a adivinar tiene 4 letras"

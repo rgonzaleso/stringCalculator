@@ -3,6 +3,11 @@ require './config'
 require './lib/ahorcado'
 
 get '/' do
+    ahorcado = Ahorcado.new
+    session['ahorcado'] = ahorcado
+
+    @tip = ahorcado.tip
+    
     erb  :juegoAhorcado
 end
 
