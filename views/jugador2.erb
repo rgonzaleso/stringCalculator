@@ -6,16 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenido</h1>
+    <h1>Arriesga una palabra</h1>
 
-    <form action="/" method="POST">
+    <form action="/jugador2" method="POST">
         <input name="palabra" id="palabra" >
 
         <input type="submit" value="Adivinar" />
     
     </form>
 
-    <%=@mensaje%>
+    <div>
+        <%=@mensaje%>
+    </div>
     
 </body>
 </html>

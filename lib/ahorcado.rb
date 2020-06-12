@@ -1,13 +1,14 @@
 class Ahorcado
 
-    def initialize 
+    def initialize palabraSecreta
         @intentos = 6
+        @palabraSecreta = palabraSecreta
     end
     
 
     def validar palabra
 
-        if palabra == 'Hola'
+        if palabra == @palabraSecreta
             'Salvaste tu vida'
         else
             @intentos -= 1            
